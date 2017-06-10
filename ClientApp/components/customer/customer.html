@@ -1,0 +1,34 @@
+﻿<h1>Customers</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p data-bind='ifnot: customers'><em>Loading...</em></p>
+
+
+<div>
+    <p data-bind='text: firstName'></p>
+    <p data-bind='text: lastName' ></p>
+    <input data-bind='value: firstName, valueUpdate: "afterkeydown"' />
+    <input data-bind='value: lastName, valueUpdate: "afterkeydown"' />
+</div>
+
+<table class='table' data-bind='if: customers'>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone</th>
+        </tr>
+    </thead>
+    <tbody data-bind='foreach: customers'>
+        <tr>
+            <td data-bind='text: customerId'></td>
+            <td data-bind='text: firstName'></td>
+            <td data-bind='text: lastName'></td>
+            <td data-bind='text: phone'></td>
+        </tr>
+    </tbody>
+</table>
+
+<button data-bind='click: addCustomer'>Add</button>
